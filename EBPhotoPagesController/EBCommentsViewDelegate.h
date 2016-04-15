@@ -11,7 +11,7 @@
  */
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class EBCommentsView;
 @protocol EBCommentsViewDelegate <NSObject>

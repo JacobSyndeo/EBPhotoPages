@@ -12,7 +12,7 @@
 
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /*
  The EBPhotoTagProtocol should be implemented by an object
