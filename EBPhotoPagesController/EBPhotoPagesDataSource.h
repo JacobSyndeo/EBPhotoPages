@@ -70,10 +70,15 @@ shouldHandleLongPressGesture:(UILongPressGestureRecognizer *)recognizer
 //Note: This method runs asynchronously in a background queue.
 - (UIImage *)photoPagesController:(EBPhotoPagesController *)controller
                      imageAtIndex:(NSInteger)index;
+- (NSURL *)photoPagesController:(EBPhotoPagesController *)controller
+					 imageURLAtIndex:(NSInteger)index;
 
 - (void)photoPagesController:(EBPhotoPagesController *)controller
                 imageAtIndex:(NSInteger)index
            completionHandler:(void(^)(UIImage *image))handler;
+- (void)photoPagesController:(EBPhotoPagesController *)controller
+				imageURLAtIndex:(NSInteger)index
+		   completionHandler:(void(^)(NSURL *url))handler;
 
 //Default value is FALSE
 - (BOOL)photoPagesController:(EBPhotoPagesController *)photoPagesController

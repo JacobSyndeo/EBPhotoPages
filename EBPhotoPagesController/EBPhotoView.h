@@ -30,6 +30,7 @@
 
 - (UIImage *)image;
 - (void)setImage:(UIImage *)image;
+- (void)setImageWithURL:(NSURL *)url;
 
 - (EBTagPopover *)activeTagPopover;
 

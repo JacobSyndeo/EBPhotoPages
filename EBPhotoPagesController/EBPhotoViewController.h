@@ -52,6 +52,7 @@
 @interface EBPhotoViewController (Image)
 - (UIImage *)image;
 - (void)setImage:(UIImage *)image;
+- (void)setImageURL:(NSURL *)url;
 @end
 
 
