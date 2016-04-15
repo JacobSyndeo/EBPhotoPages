@@ -12,7 +12,7 @@
 
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "EBPhotoTagProtocol.h"
 #import "EBPhotoCommentProtocol.h"
 

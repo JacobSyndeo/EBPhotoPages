@@ -19,6 +19,7 @@
 #import "EBPhotoTagProtocol.h"
 #import "EBShadedView.h"
 #import "EBPhotoPagesNotifications.h"
+#import "UIImageView+WebCache.h"
 
 
 static NSString *PhotoFrameKeyPath = @"frame";
@@ -272,6 +273,22 @@ static NSString *ImageKeyPath = @"image";
 }
 
 #pragma mark - Setters
+
+- (void)setImageWithURL:(NSURL *)url
+{
+    NSAssert(url, @"Image URL cannot be nil");
+    [self.imageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+		[self.imageView setAlpha:0];
+		[UIView animateWithDuration:0.1
+							  delay:0
+							options:UIViewAnimationOptionCurveEaseIn
+						 animations:^{
+							 [self.imageView setAlpha:1];
+						 }completion:nil];
+		
+		[self setContentModeForImageSize:image.size];
+	}];
+}
 
 - (void)setImage:(UIImage *)image
 {

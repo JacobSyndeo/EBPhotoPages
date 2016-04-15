@@ -12,7 +12,7 @@
 
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /*
  The EBPhotoCommentProtocol should be implemented by an object

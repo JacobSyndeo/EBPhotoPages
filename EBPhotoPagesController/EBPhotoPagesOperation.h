@@ -11,7 +11,7 @@
 
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "EBPhotoPagesDataSource.h"
 
 /*EBPhotoPagesOperation is an NSOperation subclass that is further subclassed into individual load

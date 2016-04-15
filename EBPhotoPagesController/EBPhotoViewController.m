@@ -375,6 +375,12 @@ static NSString *TagPopoversKeyPath = @"tagPopovers";
     [[NSNotificationCenter defaultCenter] postNotificationName:EBPhotoViewControllerDidSetImageNotification object:self];
 }
 
+- (void)setImageURL:(NSURL *)url;
+{
+	[self.photoView setImageWithURL:url];
+	[[NSNotificationCenter defaultCenter] postNotificationName:EBPhotoViewControllerDidSetImageNotification object:self];
+}
+
 - (UIImage *)image
 {
     return [self.photoView image];

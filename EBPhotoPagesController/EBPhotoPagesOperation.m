@@ -110,7 +110,17 @@
                                                        withObject:image
                                                     waitUntilDone:YES];
         }];
-    }
+	} else if ([self.dataSource respondsToSelector:
+				@selector(photoPagesController:imageURLAtIndex:completionHandler:)]){
+		
+		[self.dataSource photoPagesController:self.photoPagesController
+								 imageURLAtIndex:self.photoViewController.photoIndex
+							completionHandler:^(NSURL *url) {
+			[self.photoViewController performSelectorOnMainThread:@selector(setImageURL:)
+													   withObject:url
+													waitUntilDone:YES];
+							}];
+	}
 }
 
 - (void)loadImageOnMainThread
