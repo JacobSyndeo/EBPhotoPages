@@ -12,6 +12,7 @@
 
 #import "EBCaptionView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Derpibooru-Swift.h"
 
 const NSInteger MaximumNumberOfCaptionLines = 1000000;
 const NSInteger MaximumCaptionTextHeight = 10000000;
@@ -143,7 +144,8 @@ static NSString *FrameKeyPath = @"frame";
                          [self.textLabel setAlpha:0];
                      }
                      completion:^(BOOL finished){
-                         [self.textLabel setText:string];
+                         [self.textLabel setAttributedText:[[NSAttributedString alloc] initWithString:string]];
+						 [self.textLabel resolveDerpiTags];
                          [self setFrameForLabel:self.textLabel
                                      withString:string
                                     maximumSize:CGSizeMake(self.frame.size.width,
@@ -193,6 +195,7 @@ static NSString *FrameKeyPath = @"frame";
                      }
                      completion:^(BOOL finished){
                          [self.textLabel setAttributedText:attributedString];
+						 [self.textLabel resolveDerpiTags];
                          [self setFrameForLabel:self.textLabel
                                      withString:[attributedString string]
                                     maximumSize:CGSizeMake(self.frame.size.width,
